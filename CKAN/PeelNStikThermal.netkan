@@ -23,6 +23,8 @@ description: |-
   CDH-7 projects a visible energy bubble, bills a flat EC/s per metre of
   radius and suppresses Firefly reentry FX inside the field. All sinks can
   be switched on/off in flight via the right-click menu or action groups.
+  Firefly integration is optional; enhanced Firefly effects are still a
+  work in progress.
 author: Liam
 license: restricted
 resources:

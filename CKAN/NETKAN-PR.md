@@ -30,7 +30,7 @@ active heat sinks for KSP 1.12.
 - Release: https://github.com/ehemaliger56-debug/PeelNStikThermal/releases/tag/1.0.0
 - Download: https://github.com/ehemaliger56-debug/PeelNStikThermal/releases/download/1.0.0/PeelNStikThermal-1.0.0.zip
 - Dependencies: ModuleManager, ConformalDecals, B9PartSwitch, ReStock
-- Recommended: Firefly
+- Recommended: Firefly (enhanced Firefly effects are still a work in progress)
 
 Validation:
 

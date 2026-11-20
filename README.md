@@ -175,4 +175,5 @@ review: https://github.com/KSP-CKAN/NetKAN/pull/11888. See `CKAN/README.md`.
 - ModuleManager
 - ReStock (for the radial shield models)
 
-Firefly is optional and enables the energy-bubble reentry effects.
+Firefly is optional and enables the energy-bubble reentry effects. Enhanced
+Firefly effects are still a work in progress.
