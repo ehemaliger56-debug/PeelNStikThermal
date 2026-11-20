@@ -1,5 +1,5 @@
-﻿// ============================================================
-// ConformalHeatShields - ModuleHeatSpread
+// ============================================================
+// Peel-N-Stik Thermal - ModuleHeatSpread
 //
 // Two independent features, both driven from the coating part:
 //

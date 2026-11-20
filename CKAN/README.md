@@ -1,4 +1,4 @@
-# Publishing ConformalHeatShields on CKAN
+# Publishing PeelNStikThermal on CKAN
 
 CKAN does not discover mods by scanning a local `GameData` folder. It needs
 (1) a `.netkan` metadata file and (2) a download it can resolve. For this mod
@@ -6,11 +6,11 @@ the download is a GitHub Release.
 
 ## Current status
 
-- Repository: https://github.com/ehemaliger56-debug/ConformalHeatShields
-- Release `1.0.0` with `ConformalHeatShields-1.0.0.zip` is published.
-- `ConformalHeatShields.netkan` in this folder is ready to use.
+- Repository: https://github.com/ehemaliger56-debug/PeelNStikThermal
+- Release `1.0.0` with `PeelNStikThermal-1.0.0.zip` is published.
+- `PeelNStikThermal.netkan` in this folder is ready to use.
 - Remaining step: open a pull request at `KSP-CKAN/NetKAN` adding this file as
-  `NetKAN/ConformalHeatShields.netkan`. After review the mod shows up in CKAN.
+  `NetKAN/PeelNStikThermal.netkan`. After review the mod shows up in CKAN.
 
 ## Building the release ZIP
 
@@ -18,28 +18,28 @@ the download is a GitHub Release.
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build-release.ps1 -Version 1.0.0
 ```
 
-This creates `CKAN\ConformalHeatShields-1.0.0.zip`. The top level inside the
-ZIP must be `ConformalHeatShields/`, exactly as it appears in `GameData`.
+This creates `CKAN\PeelNStikThermal-1.0.0.zip`. The top level inside the
+ZIP must be `PeelNStikThermal/`, exactly as it appears in `GameData`.
 Attach the ZIP to a published GitHub release (tag `1.0.0`).
 
 ## Checking the metadata
 
 ```powershell
 # netkan.exe: https://ksp-ckan.s3-us-west-2.amazonaws.com/netkan.exe
-.\netkan.exe --verbose ConformalHeatShields.netkan
+.\netkan.exe --verbose PeelNStikThermal.netkan
 ```
 
-On success this produces `ConformalHeatShields-1.0.0.ckan`. To test locally:
+On success this produces `PeelNStikThermal-1.0.0.ckan`. To test locally:
 
 ```powershell
-.\ckan.exe install -c ConformalHeatShields-1.0.0.ckan
-.\ckan.exe show ConformalHeatShields
+.\ckan.exe install -c PeelNStikThermal-1.0.0.ckan
+.\ckan.exe show PeelNStikThermal
 ```
 
 ## Going public
 
 Open a PR in `KSP-CKAN/NetKAN` adding the file as
-`NetKAN/ConformalHeatShields.netkan`. Continuous integration checks it
+`NetKAN/PeelNStikThermal.netkan`. Continuous integration checks it
 automatically; after the CKAN team's review the mod appears in the client.
 
 Another option without a team review is a personal metadata repository: put

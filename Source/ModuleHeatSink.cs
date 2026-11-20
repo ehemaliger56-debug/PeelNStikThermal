@@ -1,5 +1,5 @@
 // ============================================================
-// ConformalHeatShields - ModuleHeatSink
+// Peel-N-Stik Thermal - ModuleHeatSink
 //
 // "Ablative Heat Sink" (CDH-4): a radial part that soaks up heat
 // from its surroundings and burns it in its own ablator:
@@ -613,7 +613,7 @@ namespace CHS
                 FireflyAPI.IFireflyModule fm = p.GetComponent<FireflyAPI.IFireflyModule>();
                 if (fm == null) return;
                 fm.OverridePhysics = true;
-                fm.OverridenBy = "ConformalHeatShields";
+                fm.OverridenBy = "PeelNStikThermal";
                 fm.OverrideEffectStrength = 0f;
                 fm.OverrideEffectState = 0f;
             }
@@ -632,7 +632,7 @@ namespace CHS
                 if (fm == null) return;
                 try
                 {
-                    if (fm.OverridenBy == "ConformalHeatShields") fm.ResetOverride();
+                    if (fm.OverridenBy == "PeelNStikThermal") fm.ResetOverride();
                 }
                 catch (Exception)
                 {

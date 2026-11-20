@@ -1,9 +1,9 @@
-# ConformalHeatShields
+# Peel-N-Stik Thermal
 
 Decal-style heat shields you can stick almost anywhere, plus a family of
 active heat sinks that pull heat out of nearby parts. For KSP 1.12.
 
-Repository: https://github.com/ehemaliger56-debug/ConformalHeatShields
+Repository: https://github.com/ehemaliger56-debug/PeelNStikThermal
 
 ---
 
