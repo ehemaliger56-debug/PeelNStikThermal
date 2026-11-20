@@ -1,7 +1,8 @@
 # NetKAN pull request draft
 
-Everything below is ready to copy when opening the pull request. No PR has been
-opened yet.
+Pull request opened: https://github.com/KSP-CKAN/NetKAN/pull/11888
+
+The details below document what was submitted.
 
 ## Target
 

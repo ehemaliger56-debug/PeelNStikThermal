@@ -9,8 +9,8 @@ the download is a GitHub Release.
 - Repository: https://github.com/ehemaliger56-debug/PeelNStikThermal
 - Release `1.0.0` with `PeelNStikThermal-1.0.0.zip` is published.
 - `PeelNStikThermal.netkan` in this folder is ready to use.
-- Remaining step: open a pull request at `KSP-CKAN/NetKAN` adding this file as
-  `NetKAN/PeelNStikThermal.netkan`. After review the mod shows up in CKAN.
+- Pull request opened: https://github.com/KSP-CKAN/NetKAN/pull/11888. After
+  review and merge the mod shows up in CKAN.
 
 ## Building the release ZIP
 

@@ -165,8 +165,8 @@ One good sink model covers all four heat sinks, since they share a mesh.
 ## CKAN
 
 CKAN metadata is in `CKAN/`. A GitHub release with the mod ZIP exists; the
-mod is not listed in CKAN yet because the pull request to
-`KSP-CKAN/NetKAN` is still open. See `CKAN/README.md`.
+mod is not listed in CKAN yet because the pull request is still under
+review: https://github.com/KSP-CKAN/NetKAN/pull/11888. See `CKAN/README.md`.
 
 ## Requirements
 
