@@ -1,62 +1,59 @@
-# ConformalHeatShields für CKAN veröffentlichen
+# Publishing ConformalHeatShields on CKAN
 
-CKAN findet Mods **nicht** durch Scannen des lokalen `GameData`-Ordners.
-Es braucht (1) eine `.netkan`-Metadatendatei und (2) einen Download, den
-CKAN auflösen kann. Für diese Mod: GitHub Release.
+CKAN does not discover mods by scanning a local `GameData` folder. It needs
+(1) a `.netkan` metadata file and (2) a download it can resolve. For this mod
+the download is a GitHub Release.
 
-## 1. GitHub vorbereiten
+## Current status
 
-1. Repo `ConformalHeatShields` anlegen (Name muss zum Identifier passen).
-2. Inhalt dieses Modordners hochladen: `GameData/ConformalHeatShields/**`,
-   `README.md`, `Source/`, `CKAN/` und eine `LICENSE`-Datei mit dem Text
-   *„All rights reserved. No permission to redistribute or modify is granted."*
-3. `<DEIN_GITHUB_USER>` in `ConformalHeatShields.netkan` durch deinen
-   GitHub-Namen ersetzen (kommt in `homepage`, `repository`, `bugtracker`
-   und `$kref` vor).
+- Repository: https://github.com/ehemaliger56-debug/ConformalHeatShields
+- Release `1.0.0` with `ConformalHeatShields-1.0.0.zip` is published.
+- `ConformalHeatShields.netkan` in this folder is ready to use.
+- Remaining step: open a pull request at `KSP-CKAN/NetKAN` adding this file as
+  `NetKAN/ConformalHeatShields.netkan`. After review the mod shows up in CKAN.
 
-## 2. Release-ZIP bauen
+## Building the release ZIP
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build-release.ps1 -Version 1.0.0
 ```
 
-Das erzeugt `CKAN\ConformalHeatShields-1.0.0.zip`. Wichtig: Im ZIP muss
-`ConformalHeatShields/` die oberste Ebene sein — genau wie im `GameData`-Ordner.
-Das ZIP kommt als Asset an ein GitHub Release (Tag `1.0.0`).
+This creates `CKAN\ConformalHeatShields-1.0.0.zip`. The top level inside the
+ZIP must be `ConformalHeatShields/`, exactly as it appears in `GameData`.
+Attach the ZIP to a published GitHub release (tag `1.0.0`).
 
-## 3. Metadaten prüfen
+## Checking the metadata
 
 ```powershell
-# netkan.exe von https://ksp-ckan.s3-us-west-2.amazonaws.com/netkan.exe
+# netkan.exe: https://ksp-ckan.s3-us-west-2.amazonaws.com/netkan.exe
 .\netkan.exe --verbose ConformalHeatShields.netkan
 ```
 
- Bei Erfolg entsteht `ConformalHeatShields-1.0.0.ckan`. Optional lokal testen:
+On success this produces `ConformalHeatShields-1.0.0.ckan`. To test locally:
 
 ```powershell
 .\ckan.exe install -c ConformalHeatShields-1.0.0.ckan
 .\ckan.exe show ConformalHeatShields
 ```
 
-## 4. Öffentlich listen lassen
+## Going public
 
-PR im Repo `KSP-CKAN/NetKAN` öffnen und die Datei als
-`NetKAN/ConformalHeatShields.netkan` hinzufügen. Die CI prüft sie automatisch;
-nach dem Review durch das CKAN-Team taucht die Mod in der CKAN-Liste auf.
+Open a PR in `KSP-CKAN/NetKAN` adding the file as
+`NetKAN/ConformalHeatShields.netkan`. Continuous integration checks it
+automatically; after the CKAN team's review the mod appears in the client.
 
-Alternative ohne Team-Review: eigenes Metadata-Repo. Die `.ckan`-Datei in ein
-GitHub-Repo legen und in CKAN unter *Settings → Metadata Repositories* die URL
-`https://github.com/<user>/<repo>/archive/main.tar.gz` hinzufügen. Nur für
-dich bzw. Leute, die dieses Repo manuell abonnieren.
+Another option without a team review is a personal metadata repository: put
+the generated `.ckan` file in a GitHub repo and add its archive URL under
+*Settings -> Metadata Repositories* in CKAN. Only people who subscribe to that
+repo will see it.
 
-## Abhängigkeiten in den Metadaten
+## Dependencies in the metadata
 
-| Relation | Mods | Warum |
+| Relation | Mods | Why |
 |---|---|---|
-| `depends` | ModuleManager, ConformalDecals, B9PartSwitch, ReStock | Aero-Patch, Decal-System, Muster-Varianten, Radial-Schild-Modelle |
-| `recommends` | Firefly | optional: Plasma-FX werden an der Blase statt am Rumpf gezeigt |
-| `suggests` | SystemHeat, HeatControl | thematisch verwandte Radiatoren/Heat-Systeme |
+| `depends` | ModuleManager, ConformalDecals, B9PartSwitch, ReStock | Aerodynamic patch, decal system, surface patterns, radial shield models |
+| `recommends` | Firefly | Optional: plasma effects play at the energy bubble instead of the hull |
+| `suggests` | SystemHeat, HeatControl | Related thermal mods |
 
-Lizenz: `restricted` ist der CKAN-Schlüssel für „All Rights Reserved" (nicht
-weiterverteilbar). Das CKAN-Team kann bei Bedarf eine eindeutige
-`LICENSE`-Datei im Repo verlangen.
+License: `restricted` is the CKAN key for "All Rights Reserved". The repo
+includes a `LICENSE` file stating this.

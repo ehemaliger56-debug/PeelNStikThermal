@@ -1,46 +1,63 @@
-# CDH-4 Ablative Heat Sink — Modell-Spezifikation
+# Part model guide
 
-Für dein eigenes Modell (Platzhalter ist aktuell das Stock-Radiator-Panel).
+Model contributions are very welcome — a hand-made mesh would make a big
+difference for these parts. This page lists the conventions so a submitted
+model drops straight into the part configs.
 
-## Formate (nach Aufwand sortiert)
+## What would help most
 
-| Weg | Was du lieferst | Wie es rein kommt |
-|-----|-----------------|-------------------|
-| **A: Unity + KSP PartTools** | fertige `.mu` + Textur | direkt einsetzbar |
-| **B: Blender + KSP-Add-on** (`io_mesh_mu` / "KSP Blender Tools") | `.mu` + Textur | direkt einsetzbar |
-| **C: alles andere** (Blender/SketchUp/Meta 3D …) | `.obj`/`.fbx`/`.dae` + PNG-Textur | ich konvertiere zu `.mu` und binde ein |
+- **Heat sinks (CDH-4 to CDH-7):** all four parts share one mesh, so a single
+  model upgrades the whole family. This is the top priority.
+- **Coatings (CDH-1, CDH-2):** a slim conformal panel look, used at many
+  scales.
+- **Radial shields (CDH-10 to CDH-13):** alternative shield shapes are
+  welcome too.
 
-## Geometrie
+## Formats
 
-- **Ursprung** = Mitte der **Klebefläche** (Pivot dort!)
-- Klebefläche liegt in der **X/Y-Ebene am Ursprung**, zeigt nach **−Z**
-  (die Fläche, die an den Rumpf drückt)
-- Sichtbare **Front ragt nach +Z** (vom Rumpf weg)
-- Maße (bei rescaleFactor 1): **Breite ~0,5–0,7 m, Höhe ~1,0–1,3 m,
-  Dicke ~0,08–0,15 m** — anderes Verhältnis ist okay, ich passe
-  `rescaleFactor` an
-- Low-poly: **< 5.000 Tris**, ein Mesh/Material reicht für V1
+| What you have | What to send |
+|---|---|
+| Unity + KSP PartTools, or Blender with a KSP export tool | A finished `.mu` plus its texture — ready to drop in |
+| Blender, SketchUp, 3D modeling software in general | A source mesh (`.obj`, `.fbx`, `.dae`) plus a PNG texture — I'll handle the import |
 
-## Textur
+## Orientation
 
-- **PNG** (KSPCF konvertiert automatisch zu DDS und cached — wie unser Atlas)
-- 1024×1024 genügt locker
-- Name z. B. `chs-heat-sink-map.png`; wenn du Normal-/Spec-Map willst:
-  `chs-heat-sink-nrm.png` / `chs-heat-sink-spec.png` (optional)
+- The part origin sits at the **centre of the mounting pad** (the flat side
+  that touches the hull).
+- The pad lies in the local **X/Y plane at z = 0** and faces **-Z**, toward
+  the hull.
+- The visible body extends along **+Z**, away from the hull.
+- The attach node in the config is at the origin with normal `(0, 0, 1)`.
+  KSP ignores the model's root transform for attachment, so the mesh itself
+  must be authored with this orientation.
 
-## Look-Vorschlag (frei)
+## Size
 
-- Unten: dunkle Klebebasis/Pad (Peel-N-Stik-Look passend zum Mod)
-- Darauf: ablative "Schwamm"-Struktur — Quilt-/Waben-/Kachelmuster,
-  stilistisch an die CDH-Coating-Kacheln anlehnend
-- Optional: Metallrahmen oder Kühlrippen seitlich (sieht nach "Absorber" aus)
-- Farbverlauf Andeutung: heiß vorne (orange/glühend) → kühler hinten
+- Reference mesh at scale 1: pad roughly **0.5 m across**, body roughly
+  **1.0-1.3 m tall** and **0.1 m deep**. Different proportions are fine;
+  the per-part scale can be adjusted.
+- Current scale values: CDH-4 **1.0**, CDH-5 **2.0**, CDH-6 **1.775**,
+  CDH-7 **1.0**.
+- Keep it low-poly: **under 5,000 triangles**. One mesh and one material are
+  enough.
 
-## Ablauf danach
+## Texture
 
-1. Datei(en) einfach hier ablegen, z. B. in
-   `GameData/ConformalHeatShields/Assets/` (Ordner anlegen ist okay)
-   oder in `Downloads` — sag mir kurz wo
-2. Ich binde sie ein: `MODEL`-Node in `heatShield-sink.cfg` umstellen,
-   `node_attach`/`rescaleFactor` anpassen, Textur referenzieren
-3. KSP-Test → wir justieren Größe/Ausrichtung, falls nötig
+- A **PNG** diffuse texture is ideal; **1024x1024** is plenty.
+- Optional normal or specular maps are welcome too.
+- Filenames are not important — anything clear will do.
+
+## Look (just a suggestion)
+
+- A dark adhesive pad at the base, in the spirit of the Peel-N-Stik shields.
+- An ablative surface above it: quilted, honeycomb or tile patterns fit the
+  coating style of the rest of the mod.
+- Optional metal frame or cooling fins along the sides.
+- A subtle warm-to-cool gradient from the exposed face toward the hull.
+
+## Sending it
+
+Open an issue or a pull request in the repository and attach the files, or
+drop them into the mod folder and let me know where they are. I'll wire the
+model into the part configs and test it in game; if anything needs rotating
+or resizing, we can sort that out together. Thanks!
