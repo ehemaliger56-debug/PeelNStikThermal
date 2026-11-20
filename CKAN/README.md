@@ -41,6 +41,7 @@ On success this produces `PeelNStikThermal-1.0.0.ckan`. To test locally:
 Open a PR in `KSP-CKAN/NetKAN` adding the file as
 `NetKAN/PeelNStikThermal.netkan`. Continuous integration checks it
 automatically; after the CKAN team's review the mod appears in the client.
+`NETKAN-PR.md` in this folder contains a ready-to-copy title and description.
 
 Another option without a team review is a personal metadata repository: put
 the generated `.ckan` file in a GitHub repo and add its archive URL under

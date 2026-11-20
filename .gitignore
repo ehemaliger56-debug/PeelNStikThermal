@@ -2,6 +2,7 @@
 CKAN/*.zip
 CKAN/netkan.exe
 CKAN/ckan.exe
+CKAN/*.ckan
 
 # Logs
 *.log
