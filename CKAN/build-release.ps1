@@ -7,9 +7,8 @@ $stage   = Join-Path ([System.IO.Path]::GetTempPath()) ('chs-release-' + [guid]:
 $target  = Join-Path $stage 'ConformalHeatShields'
 
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-Get-ChildItem -Path $modRoot -Force |
-    Where-Object { $_.Name -ne '.git' -and $_.Extension -ne '.zip' } |
-    Copy-Item -Destination $target -Recurse -Force
+& robocopy $modRoot $target /E /XD .git /XF *.zip *.log /NFL /NDL /NJH /NJS /NP | Out-Null
+if ($LASTEXITCODE -ge 8) { throw "robocopy failed with exit code $LASTEXITCODE" }
 
 $zip = Join-Path $PSScriptRoot "ConformalHeatShields-$Version.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
