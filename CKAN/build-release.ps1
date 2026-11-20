@@ -7,7 +7,9 @@ $stage   = Join-Path ([System.IO.Path]::GetTempPath()) ('chs-release-' + [guid]:
 $target  = Join-Path $stage 'ConformalHeatShields'
 
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-Get-ChildItem -Path $modRoot -Force | Copy-Item -Destination $target -Recurse -Force
+Get-ChildItem -Path $modRoot -Force |
+    Where-Object { $_.Name -ne '.git' -and $_.Extension -ne '.zip' } |
+    Copy-Item -Destination $target -Recurse -Force
 
 $zip = Join-Path $PSScriptRoot "ConformalHeatShields-$Version.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
