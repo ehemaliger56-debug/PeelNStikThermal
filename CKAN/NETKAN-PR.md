@@ -1,6 +1,7 @@
 # NetKAN pull request draft
 
-Pull request opened: https://github.com/KSP-CKAN/NetKAN/pull/11888
+Pull request opened: https://github.com/KSP-CKAN/NetKAN/pull/11888 (merged)
+Follow-up for the author name: https://github.com/KSP-CKAN/NetKAN/pull/11893
 
 The details below document what was submitted.
 
