@@ -5,6 +5,8 @@ active heat sinks that pull heat out of nearby parts. For KSP 1.12.
 
 Repository: https://github.com/ehemaliger56-debug/PeelNStikThermal
 
+[![Discord](https://img.shields.io/badge/Discord-Lynx%20Development-5865F2?logo=discord)](https://discord.gg/GEjdeqJE6g)
+
 ---
 
 ## What's included
@@ -164,9 +166,8 @@ One good sink model covers all four heat sinks, since they share a mesh.
 
 ## CKAN
 
-CKAN metadata is in `CKAN/`. A GitHub release with the mod ZIP exists; the
-mod is not listed in CKAN yet because the pull request is still under
-review: https://github.com/KSP-CKAN/NetKAN/pull/11888. See `CKAN/README.md`.
+The mod is listed in CKAN as `PeelNStikThermal` - search for "Peel-N-Stik
+Thermal" in the client. Metadata source is in `CKAN/`; see `CKAN/README.md`.
 
 ## Requirements
 
