@@ -8,12 +8,9 @@ model drops straight into the part configs.
 
 - **Heat sinks (CDH-4 to CDH-7):** all four parts share one mesh, so a single
   model upgrades the whole family. This is the top priority.
-- **CDH-8 Strip Heat Sink:** a separate, narrower model is wanted for this
-  one - a slim strip for trusses and wing edges. Same pad-at-z=0 orientation
-  as the other sinks, but a long and narrow footprint (roughly 0.7 m x 0.15 m
-  at scale 1, body about 0.8 m tall). The part config already points at
-  `PeelNStikThermal/Assets/chs-sink-strip`; drop the `.mu` and texture there
-  and it will pick them up.
+- **CDH-8 Strip Heat Sink:** uses its own narrow model at
+  `PeelNStikThermal/Assets/chs-sink-strip` (pad-at-z=0, body along +Z,
+  footprint roughly 0.7 m x 0.15 m at scale 1).
 - **Coatings (CDH-1, CDH-2):** a slim conformal panel look, used at many
   scales.
 - **Radial shields (CDH-10 to CDH-13):** alternative shield shapes are
@@ -42,8 +39,8 @@ model drops straight into the part configs.
 - Reference mesh at scale 1: pad roughly **0.5 m across**, body roughly
   **1.0-1.3 m tall** and **0.1 m deep**. Different proportions are fine;
   the per-part scale can be adjusted.
-- Current scale values: CDH-4 **1.0**, CDH-8 **1.0** (own model), CDH-5 **2.0**,
-  CDH-6 **1.775**, CDH-7 **1.0**.
+- Current scale values: CDH-4 **1.0**, CDH-5 **2.0**, CDH-6 **1.775**,
+  CDH-7 **1.0**, CDH-8 **1.0** (own model).
 - Keep it low-poly: **under 5,000 triangles**. One mesh and one material are
   enough.
 
