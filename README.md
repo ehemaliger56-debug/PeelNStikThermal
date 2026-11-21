@@ -157,13 +157,16 @@ CDH-7's flat per-metre draw keeps large fields affordable.
 
 ---
 
-## Model contributions welcome
+## Models and textures welcome
 
 I'd love to give every part its own proper model, and I could really use a
-hand with that. If you make KSP part models, please feel free to send one my
-way — open an issue or a pull request in the repository and attach the files.
-One good sink model covers all four heat sinks, since they share a mesh.
-`MODEL-SPEC.md` has the orientation and size conventions. Thanks for any help!
+hand with that. Textures are just as welcome: new or improved diffuse maps,
+normal/specular maps, decal patterns or coating looks for the heat shields
+and heat sinks. If you make KSP part models or textures, please feel free to
+send them my way — open an issue or a pull request in the repository and
+attach the files. One good sink model covers the shared heat sink family
+(CDH-4 to CDH-7); CDH-8 uses its own narrow model. `MODEL-SPEC.md` has the
+orientation and size conventions. Thanks for any help!
 
 ---
 

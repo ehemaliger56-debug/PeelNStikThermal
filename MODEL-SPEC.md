@@ -1,8 +1,10 @@
 # Part model guide
 
-Model contributions are very welcome — a hand-made mesh would make a big
-difference for these parts. This page lists the conventions so a submitted
-model drops straight into the part configs.
+Model and texture contributions are very welcome — a hand-made mesh or a
+fresh texture would make a big difference for these parts. This page lists
+the conventions so a submitted model drops straight into the part configs.
+Textures can be sent on their own: diffuse, normal or specular maps for the
+heat shields and heat sinks, plus new decal patterns for the coatings.
 
 ## What would help most
 
