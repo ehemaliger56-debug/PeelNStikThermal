@@ -16,6 +16,7 @@ Repository: https://github.com/ehemaliger56-debug/PeelNStikThermal
 | **CDH-1 Ablative Coating Tiles** | `chs-ablator-coating` | Scalable stick-on ablator sheet with a tile look. Attach it like a flag decal; adjust scale, height and opacity in the part menu. Four surface patterns. |
 | **CDH-2 Large Ablative Coating Panel** | `chs-ablator-coating-large` | Large preset that spawns at 6x scale - cover a whole tank wall in one go. Same patterns as CDH-1. |
 | **CDH-4 Heat Sink** | `chs-heat-sink` | Compact active heat sink, attachable radially to any hull. Pulls heat from everything in range into its core, stores mild heat for free, then spends ElectricCharge on sustained load. |
+| **CDH-8 Strip Heat Sink** | `chs-heat-sink-strip` | Narrow strip for trusses and wing edges. Same machinery, 4 m fresh field, 600 K free bank. |
 | **CDH-5 Advanced Heat Sink** | `chs-heat-sink-adv` | Larger version with a wider field (fresh radius 8 m), a bigger free bank and a stronger pull. |
 | **CDH-6 Elite Heat Sink** | `chs-heat-sink-elite` | As compact as CDH-4 with CDH-5's field and the best power efficiency in the family. |
 | **CDH-7 Shield Projector** | `chs-shield-projector` | Projects a visible energy bubble over everything in range (fresh radius 14 m, up to 30 m). Heat is deflected instead of stored, for a flat EC/s per metre of radius. |
@@ -74,7 +75,7 @@ A coating can also place visible copies on directly adjacent surfaces:
 
 ## Heat sinks
 
-CDH-4 through CDH-7 share the same machinery:
+CDH-4 through CDH-8 share the same machinery:
 
 - They pull **interior and skin heat** from every part in range, including
   detached parts and debris. The pull aims at a fixed temperature ceiling,
@@ -90,13 +91,13 @@ CDH-4 through CDH-7 share the same machinery:
   and the sink blows like a fuse - deliberately below the limit of tanks,
   so its neighbours survive.
 
-| | **CDH-4** | **CDH-5 Advanced** | **CDH-6 Elite** | **CDH-7 Shield** |
-|---|---|---|---|---|
-| Fresh radius | 2 m | 8 m | 8 m | 14 m |
-| Free bank up to | 550 K | 650 K | 400 K | - |
-| Power per 300 kW pull | about 12 EC/s | about 12 EC/s | about 6 EC/s | flat 0.56 EC/s at 14 m |
-| Pull strength | 1.0 | 1.2 | 1.5 | 1.5 |
-| Temperature ceiling | 450 K | 450 K | 400 K | 400 K |
+| | **CDH-4** | **CDH-8 Strip** | **CDH-5 Advanced** | **CDH-6 Elite** | **CDH-7 Shield** |
+|---|---|---|---|---|---|
+| Fresh radius | 2 m | 4 m | 8 m | 8 m | 14 m |
+| Free bank up to | 550 K | 600 K | 650 K | 400 K | - |
+| Power per 300 kW pull | about 12 EC/s | about 12 EC/s | about 12 EC/s | about 6 EC/s | flat 0.56 EC/s at 14 m |
+| Pull strength | 1.0 | 1.2 | 1.2 | 1.5 | 1.5 |
+| Temperature ceiling | 450 K | 450 K | 450 K | 400 K | 400 K |
 
 Each sink has an **Absorption Radius** slider in the editor, plus a live
 **Power Draw** readout in flight so you can size your batteries and
@@ -130,16 +131,16 @@ reactors.
 
 | Node | Parts |
 |---|---|
-| **survivability** (early) | CDH-1, CDH-2, CDH-4, CDH-10 (0.625 m), CDH-11 (1.25 m) |
+| **survivability** (early) | CDH-1, CDH-2, CDH-4, CDH-8, CDH-10 (0.625 m), CDH-11 (1.25 m) |
 | **advConstruction** (mid) | CDH-5 |
 | **landing** (mid) | CDH-12 (2.5 m) |
 | **advLanding** (late) | CDH-13 (3.75 m) |
 | **experimentalScience** (late) | CDH-6 |
 | **experimentalElectrics** (end) | CDH-7 |
 
-Each tier matches the power budget of its era: CDH-4 runs on batteries,
-CDH-5 on fuel cells, CDH-6 is the efficient endgame sink, and CDH-7's flat
-per-metre draw keeps large fields affordable.
+Each tier matches the power budget of its era: CDH-4 and CDH-8 run on
+batteries, CDH-5 on fuel cells, CDH-6 is the efficient endgame sink, and
+CDH-7's flat per-metre draw keeps large fields affordable.
 
 ---
 
@@ -147,6 +148,8 @@ per-metre draw keeps large fields affordable.
 
 - One sink per hot zone (engine section, nose) is usually enough. Crewed
   parts in range are cooled too.
+- CDH-8 is the one to reach for on truss spines and wing edges: its narrow
+  strip fits where a round pad will not.
 - CDH-6's small size makes it a good choice for cramped hulls.
 - CDH-2 spawns large - handy for covering a tank wall quickly.
 - Multiple panels side by side: shift-click the same mount point to copy

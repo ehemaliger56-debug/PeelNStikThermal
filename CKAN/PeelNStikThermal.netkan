@@ -15,8 +15,9 @@ name: Peel-N-Stik Thermal
 abstract: Ablative stick-on heat shields and active heat sinks for KSP 1.12.
 description: |-
   Adds four radial peel-and-stik ablative heat shields (0.625 m to 3.75 m),
-  scalable conformal decal coatings with four tile patterns, and four active
-  heat sinks (CDH-4..7). The sinks pull interior and skin heat from every
+  scalable conformal decal coatings with four tile patterns, and five active
+  heat sinks (CDH-4..8, including a narrow strip sink for trusses and wing
+  edges). The sinks pull interior and skin heat from every
   part in radius, store mild heat for free and bill the overflow to
   ElectricCharge. They brown out when power runs dry and blow like a
   sacrificial fuse at 1800 K, with an early warning in the part menu.
